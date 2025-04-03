@@ -1,5 +1,5 @@
 apt update
-apt install vim unzip screen
+apt install -y vim unzip screen
 mkdir init
 cd init
 wget https://github.com/projectdiscovery/nuclei/releases/download/v3.4.1/nuclei_3.4.1_linux_amd64.zip
