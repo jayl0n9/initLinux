@@ -19,11 +19,13 @@ for (var i=0; i < prices.length ;i++){
      typePrice="未知"
   }
   if (typePrice == "https://51nbimg.u51.com/6e0c076cfd8747b98dd92083ff59ab1f.png") {
-     typePrice = "wx"
+     typePrice = "微信公众号"
   }else if (typePrice == "https://51nbimg.u51.com/b4c692b08ef04844a926f897c6d10826.png") {
-     typePrice = "wb"
+     typePrice = "微博"
   }else if (typePrice == "https://51nbimg.u51.com/f51185467a274c4f94aedaccf1bd1de7.png") {
-     typePrice = "wxapp"
+     typePrice = "小程序"
+  }else if (typePrice == "https://51nbimg.u51.com/9f23e53320bb4ec5a55a13c374dcea0a.png") {
+     typePrice = "抖音号"
   }
   desc=prices[i].querySelector(".desc").innerText
   console.log( name + "<----->"+ typePrice + "<----->"+ desc)
@@ -31,3 +33,50 @@ for (var i=0; i < prices.length ;i++){
   name=""
 }
 
+//app
+var contentItemPrice = document.querySelectorAll("#page-menu-project-info > section > div > div > div.el-dialog__body > div.product-more-content > article > div");
+var prices=contentItemPrice[0].querySelectorAll("a > .content")
+var desc=""
+var name=""
+for (var i=0; i < prices.length ;i++){
+  name=prices[i].querySelector(".name .text").innerText
+  desc=prices[i].querySelector(".desc").innerText
+  console.log( name + "<----->"+ desc)
+  desc=""
+  name=""
+}
+
+
+//集团成员
+var contentItemPrice = document.querySelectorAll("#page-menu-shareholder-info > section > div > div > div.el-dialog__body > div.product-more-content > article > div");
+var prices=contentItemPrice[0].querySelectorAll("a > .content")
+var desc=""
+var name=""
+for (var i=0; i < prices.length ;i++){
+  name=prices[i].querySelector(".name-impact .name").innerText
+  if (prices[i].querySelector(".more-info .name")!=null){
+      desc=prices[i].querySelector(".more-info .name").innerText
+  }else{
+      desc=""
+  }
+  console.log( name + "<----->"+ desc)
+  desc=""
+  name=""
+}
+
+//对外投资
+var contentItemPrice = document.querySelectorAll("#page-menu-shareholder-info > section > div > div > div.el-dialog__body > div.product-more-content > article > div");
+var prices=contentItemPrice[0].querySelectorAll("a > .content")
+var desc=""
+var name=""
+for (var i=0; i < prices.length ;i++){
+  name=prices[i].querySelector(".name-impact .name").innerText
+  if (prices[i].querySelector(".more-info")!=null){
+      desc=prices[i].querySelector(".more-info").innerText
+  }else{
+      desc=""
+  }
+  console.log( name + "<----->"+ desc)
+  desc=""
+  name=""
+}
