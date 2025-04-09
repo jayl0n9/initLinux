@@ -3,3 +3,31 @@ var prices=contentItemPrice[0].querySelectorAll("a > .content")
 for (var i=0; i < prices.length ;i++){
   console.log(prices[i].querySelector(".website-item-name p").innerText + "<----->"+prices[i].querySelector(".website-item-url p").innerText)
 }
+
+
+//新媒体
+var contentItemPrice = document.querySelectorAll("#page-menu-project-info > section > div > div > div.el-dialog__body > div.product-more-content > article > div");
+var prices=contentItemPrice[0].querySelectorAll("a > .content")
+var desc=""
+var name=""
+var typePrice=""
+for (var i=0; i < prices.length ;i++){
+  name=prices[i].querySelector(".media-item-name p").innerText
+  if (prices[i].querySelector(".media-item-name .type img").attributes.src!=undefined){
+     typePrice=prices[i].querySelector(".media-item-name .type img").attributes["src"].textContent
+  }else{
+     typePrice="未知"
+  }
+  if (typePrice == "https://51nbimg.u51.com/6e0c076cfd8747b98dd92083ff59ab1f.png") {
+     typePrice = "wx"
+  }else if (typePrice == "https://51nbimg.u51.com/b4c692b08ef04844a926f897c6d10826.png") {
+     typePrice = "wb"
+  }else if (typePrice == "https://51nbimg.u51.com/f51185467a274c4f94aedaccf1bd1de7.png") {
+     typePrice = "wxapp"
+  }
+  desc=prices[i].querySelector(".desc").innerText
+  console.log( name + "<----->"+ typePrice + "<----->"+ desc)
+  desc=""
+  name=""
+}
+
