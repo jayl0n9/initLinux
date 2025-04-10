@@ -1,3 +1,7 @@
+
+
+
+//网站
 var contentItemPrice = document.querySelectorAll("#page-menu-project-info > section > div > div > div.el-dialog__body > div.product-more-content > article > div");
 var prices=contentItemPrice[0].querySelectorAll("a > .content")
 for (var i=0; i < prices.length ;i++){
